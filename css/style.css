@@ -274,7 +274,7 @@ input {
     width: max-content;
     padding: 1rem 2.25rem;
     color: var(--white-color);
-    background: var(--primary-color);
+    background: #31405F;
     border-radius: .5rem;
     justify-content: center;
     align-items: center;
@@ -325,7 +325,7 @@ input {
     }
 }
 
-/*=============== LOGIN PAGE ==================*/
+/*=============== REGISTER PAGE ==================*/
 .register_container {
     margin-left: 1rem;
     margin-right: 1rem;
