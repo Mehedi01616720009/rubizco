@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--=============== GOOGLE FONT ===============-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+	<!--=============== BOX ICONS ===============-->
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+	<!--=============== FAV ICON ===============-->
+	<link rel="shortcut icon" href="images/fav_icon.png">
+
+	<!--=============== BOOTSTRAP CSS ===============-->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!--=============== STYLE CSS ===============-->
+	<link rel="stylesheet" href="css/style.css">
+
+	<title>Hasan Code - Dashboard</title>
+</head>
+<body>
+
+<!--=============== TOP HEADER ===============-->
+<header class="rubizco_header" id="header">
+    <nav class="rubizco_nav rubizco_container">
+    	<!--===== TOGGLE BUTTON =====-->
+        <div class="nav_toggle" id="nav-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+
+        <!--===== NAVBAR RIGHT CONTENT =====-->
+        <div class="nav_right_content">
+            <form method="post" action="" class="search_form">
+            	<input type="text" name="search" placeholder="Search...">
+            	<button type="submit"><i class='bx bx-search'></i></button>
+            </form>
+            <a href="#"><i class='bx bxs-cog topbar_icon'></i></a>
+            <a href="#"><i class='bx bxs-bell topbar_icon'></i></a>
+            <div class="nav_profile_dropdown">
+            	<div class="nav_profile">
+            		<img src="images/user.jpg" class="nav_profile_img">
+            	</div>
+            	
+            	<div class="nav_profile_dropdown_list">
+            		<a href="#">My Profile</a>
+            		<a href="#">Log Out</a>
+            	</div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--=============== SIDEBAR ===============-->
+<div class="nav_menu" id="nav-menu">
+	<!--===== LOGO =====-->
+	<div class="nav_logo">
+		<a href="index.html">
+			<img src="images/logo.png">
+		</a>
+	</div>
+
+	<!--===== SIDEBAR MENU =====-->
+	<ul class="nav_list">
+		<li class="nav_item">
+			<a href="#" class="nav_link"><i class='bx bxs-dashboard'></i> Dashboard</a>
+		</li>
+
+		<li class="nav_item">
+			<a href="#" class="nav_link"><i class='bx bxs-user'></i> User</a>
+		</li>
+
+		<li class="nav_item">
+			<a href="#" class="nav_link"><i class='bx bxs-add-to-queue'></i> Post</a>
+		</li>
+
+		<li class="nav_item">
+			<a href="#" class="nav_link"><i class='bx bxs-shopping-bag'></i> Product</a>
+		</li>
+
+		<li class="nav_item">
+			<a href="billing.html" class="nav_link rubizco-active-link"><i class='bx bxs-credit-card'></i> Billing</a>
+		</li>
+
+		<li class="nav_item">
+			<a href="#" class="nav_link"><i class='bx bxs-cog' ></i> Setting</a>
+		</li>
+	</ul>
+
+	<i class='bx bx-x nav_close' id="nav-close"></i>
+</div>
+
+<!--=============== MAIN CONTENT ===============-->
+<main class="rubizco_main">
+	<section class="rubizco_section">
+		<div class="bill_container rubizco_container">
+			
+		</div>
+	</section>
+</main>
+
+
+<!--=============== JQUERY LIBRARY ===============-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!--=============== BOOTSTRAP JS LIBRARY ===============-->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!--=============== CUSTOM JS ===============-->
+<script src="js/main.js"></script>
+</body>
+</html>

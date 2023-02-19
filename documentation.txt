@@ -1,0 +1,9 @@
+primary-color: #0c8bca
+dark-color: #335566
+success: #16d436
+info: #17a2e8
+warning: #fbc932
+danger: #ea0606
+
+primary-gra: #00aaff, #28c842
+success: #2deb4d, #16ac2f
