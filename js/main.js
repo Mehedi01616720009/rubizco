@@ -49,3 +49,103 @@ function linkAction(){
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+/*========= CHANGE BACKGROUND HEADER =========*/
+function scrollHeader(){
+    const header = document.getElementById('header')
+
+    if(this.scrollY >= 100) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader)
+
+/*========= MODAL =========*/
+/*===== SHOW MODAL =====*/
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('show-modal')
+}
+
+/*===== CLOSE MODAL =====*/
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal_container')
+        closeModal(modal)
+    })
+})
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('show-modal')
+}
+
+/*========= SELECT INPUT =========*/
+const selectedBox = document.querySelectorAll('.select_box')
+
+/*===== SELECT BOX TOGGLE =====*/
+selectedBox.forEach((select) => {
+    const selected = select.querySelector('.option_selected')
+
+    selected.addEventListener('click', () => {
+        const openSelect = document.querySelector('.select-active')
+
+        toggleSelect(select)
+
+        if (openSelect && openSelect!= select) {
+            toggleSelect(openSelect)
+        }
+
+        /*===== OPTION SELECT =====*/
+        const optionList = select.querySelectorAll('.option')
+        optionList.forEach( o => {
+            o.addEventListener('click', () => {
+                selected.innerHTML = o.querySelector('label').innerHTML;
+                select.classList.remove('select-active')
+                selected.classList.add('active')
+            })
+        })
+
+        /*===== SEARCH OPTION =====*/
+        const selectSearch = select.querySelector('.option_search input')
+        selectSearch.addEventListener('keyup', function(e) {
+            filterList(e.target.value);
+        })
+        
+        const filterList = searchTerm => {
+            searchTerm = searchTerm.toLowerCase();
+            optionList.forEach( option => {
+                let label = option.firstElementChild.nextElementSibling.innerText.toLowerCase();
+                if (label.indexOf(searchTerm) != -1) {
+                    option.style.display = 'block';
+                } else {
+                    option.style.display = 'none';
+                }
+            })
+        }
+
+        selectSearch.value = '';
+        filterList('');
+    })
+})
+
+const toggleSelect = (select) => {
+    const optionContainer = select.querySelector('.option_container')
+
+    if (select.classList.contains('select-active')) {
+        select.classList.remove('select-active')
+    } else {
+        select.classList.add('select-active')
+    }
+}
+
+/*========= DATA TABLE =========*/
+// let table = new DataTable('#table_id');

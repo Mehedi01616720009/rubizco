@@ -21,6 +21,9 @@
 	<!--=============== BOOTSTRAP CSS ===============-->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 
+	<!--=============== BOOTSTRAP DATA TABLE ===============-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
+
 	<!--=============== STYLE CSS ===============-->
 	<link rel="stylesheet" href="css/style.css">
 
@@ -130,9 +133,68 @@
 				</div>
 			</div><br><br>
 
+            <h5>SELECT ELEMENTS</h5>
+			<div class="rubizco_grid">
+				<div class="select_box">
+					<div class="option_selected box_shadow">
+						Select Your Category
+					</div>
+					<div class="option_container box_shadow">
+						<div class="option_search">
+							<input type="text" name="" placeholder="Search...">
+						</div>
+
+						<div class="option">
+							<input type="radio" name="category" id="afganisthan" class="option_radio">
+							<label for="afganisthan">Afganisthan</label>
+						</div>
+						<div class="option">
+							<input type="radio" name="category" id="australia" class="option_radio">
+							<label for="australia">Australia</label>
+						</div>
+						<div class="option">
+							<input type="radio" name="category" id="bangladesh" class="option_radio">
+							<label for="bangladesh">Bangladesh</label>
+						</div>
+						<div class="option">
+							<input type="radio" name="category" id="china" class="option_radio">
+							<label for="china">China</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="select_box">
+					<div class="option_selected box_shadow">
+						Select Your Category
+					</div>
+					<div class="option_container box_shadow">
+						<div class="option_search">
+							<input type="text" name="" placeholder="Search...">
+						</div>
+
+						<div class="option">
+							<input type="radio" name="category" id="afganisthan" class="option_radio">
+							<label for="afganisthan">Afganisthan</label>
+						</div>
+						<div class="option">
+							<input type="radio" name="category" id="australia" class="option_radio">
+							<label for="australia">Australia</label>
+						</div>
+						<div class="option">
+							<input type="radio" name="category" id="bangladesh" class="option_radio">
+							<label for="bangladesh">Bangladesh</label>
+						</div>
+						<div class="option">
+							<input type="radio" name="category" id="china" class="option_radio">
+							<label for="china">China</label>
+						</div>
+					</div>
+				</div>
+			</div><br><br>
+
             <h5>BUTTON ELEMENTS</h5>
 			<div class="rubizco_grid">
-				<button class="button rb_w_100 box_shadow">Rubizco Button<i class="bi bi-box-arrow-in-right"></i></button>
+				<button class="button button_animate rb_w_100 box_shadow">Rubizco Button<i class="bi bi-box-arrow-in-right"></i></button>
 			</div><br><br>
 
             <h5>CHECKBOX ELEMENTS</h5>
@@ -142,6 +204,58 @@
 					<span class="checked"></span>
 					Remember me
 				</label>
+			</div><br><br>
+
+			<h5>MODAL ELEMENTS</h5>
+			<div class="rubizco_grid">
+				<button class="button box_shadow" data-modal-target="#modal-container">Launch Modal</button>
+
+				<div class="modal_container" id="modal-container">
+					<div class="modal_content">
+						<div class="modal_close button_hover close_modal" title="Close" data-close-button><i class="bi bi-x-lg"></i></div>
+
+						<h4 class="modal_title">Modal Title</h4>
+
+						<div class="modal_body">
+							<p class="modal_title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, velit!</p>
+						</div>
+
+						<button class="button button_hover btn_sm rb_w_100">Accept</button>
+						<button class="button btn_sm rb_w_100 btn_trp close_modal" data-close-button>Close</button>
+					</div>
+				</div>
+			</div><br><br>
+
+			<h5>ALERT ELEMENTS</h5>
+			<div class="rubizco_grid">
+				<div class="rubizco_alert">
+					<div class="rubizco_alert_icon">
+						<i class="bi bi-exclamation-circle"></i>
+					</div>
+					<h6 class="rubizco_alert_message">Alert Title of Message</h6>
+				</div>
+			</div><br><br>
+
+			<h5>DATA TABLE</h5>
+			<div class="rubizco_grid">
+				<table id="table_id" class="display">
+					<thead>
+						<tr>
+							<th>Column 1</th>
+							<th>Column 2</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Mehedi</td>
+							<td>77973</td>
+						</tr>
+						<tr>
+							<td>Fahad</td>
+							<td>12334</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</section>
@@ -153,6 +267,9 @@
 
 <!--=============== BOOTSTRAP JS LIBRARY ===============-->
 <script src="js/bootstrap.bundle.min.js"></script>
+
+<!--=============== DATA TABLE JS ===============-->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
 
 <!--=============== CUSTOM JS ===============-->
 <script src="js/main.js"></script>

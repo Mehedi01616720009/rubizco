@@ -135,6 +135,7 @@ button, input {
     border: none;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
+    outline: 0;
 }
 
 button {
@@ -147,8 +148,13 @@ input {
 }
 
 /*=============== REUSABLE CLASS ==================*/
+/*======= LAYOUT ========*/
 .rb_w_100 {
     width: 100% !important;
+}
+
+.cursor_pointer {
+    cursor: pointer;
 }
 
 .rubizco_section {
@@ -165,6 +171,33 @@ input {
     gap: 1.25rem;
 }
 
+.rb_flex {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rb_end {
+    justify-content: flex-end;
+}
+
+.icon_box {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--hover-color);
+    color: var(--white-color);
+    border-radius: .75rem;
+    justify-content: center;
+}
+
+.card_sm {
+    background: var(--white-color);
+    padding: 1rem 1.5rem;
+    border-radius: 1.5rem;
+    row-gap: 0.25rem;
+    box-shadow: 0 25px 40px rgb(5 5 5 / 11%);
+}
+
 .box_shadow {
     box-shadow: 0 25px 40px rgb(5 5 5 / 11%);
 }
@@ -173,6 +206,12 @@ input {
     position: relative;
 }
 
+/*======= MARGIN ========*/
+.mb_1 {
+    margin-bottom: var(--mb-1);
+}
+
+/*======= INPUT GROUP ========*/
 .form_group {
     display: flex;
     flex-direction: column;
@@ -198,6 +237,7 @@ input {
     font-weight: var(--font-medium);
 }
 
+/*======= INPUT ICON ========*/
 .form_icon_left {
     width: 1.75rem;
     height: 1.75rem;
@@ -220,6 +260,85 @@ input {
     bottom: 0;
 }
 
+/*======= INPUT GROUP ========*/
+.select_box {
+    display: flex;
+    flex-direction: column;
+}
+
+.option_selected {
+    background: var(--white-color);
+    border-radius: .75rem;
+    margin-bottom: var(--mb-0-5);
+}
+
+.option_container {
+    background: var(--white-color);
+    width: 100%;
+    transition: all .4s;
+    border-radius: .75rem;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+
+.select_box.select-active .option_container {
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.option_container::-webkit-scrollbar {
+    width: .35rem;
+    background: var(--light-color);
+    border-radius: 0 .5rem .5rem 0;
+}
+
+.option_container::-webkit-scrollbar-thumb {
+    background: var(--gray-text-color);
+    border-radius: 0 .5rem .5rem 0;
+}
+
+.option_search {
+    width: 100%;
+    padding: .75rem 1.5rem;
+}
+
+.option_search input {
+    width: 100%;
+}
+
+.option_selected,
+.option {
+    padding: .75rem 1.5rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.option_selected.active {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.option:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.option label {
+    cursor: pointer;
+}
+
+.option input:checked .option {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.option_radio {
+    display: none;
+}
+
+/*======= CHECKBOX ========*/
 .checkbox_label {
     width: max-content;
     border-radius: 1.25rem;
@@ -268,13 +387,14 @@ input {
     background: var(--white-color);
 }
 
+/*======= BUTTON ========*/
 .button {
     display: flex;
     line-height: var(--btn-line-height);
     width: max-content;
     padding: 1rem 2.25rem;
     color: var(--white-color);
-    background: #31405F;
+    background: var(--primary-color);
     border-radius: .5rem;
     justify-content: center;
     align-items: center;
@@ -287,16 +407,113 @@ input {
     font-size: 1.2rem;
 }
 
-.button:hover i {
+.button_hover:hover {
+    background: var(--hover-color);
+}
+
+.button_animate:hover i {
     transform: translateX(.75rem);
 }
 
+.btn_sm {
+    padding: .5rem 1.5rem;
+}
+
+.btn_trp {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+/*======= FORM META ========*/
 .form_meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
     font-weight: var(--font-semi-bold);
+}
+
+/*======= MODAL ========*/
+.modal_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--bg-color);
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-fixed);
+    display: grid;
+    align-items: flex-end;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    perspective: 1000px;
+}
+
+.modal_content {
+    position: relative;
+    background: var(--white-color);
+    padding: 3rem 2rem 2rem;
+    border-radius: 1rem 1rem 0 0;
+    transition: all .3s;
+    box-shadow: 0 0 30px 0px rgb(5 5 5 / 11%);
+    transform: rotateX(65deg) scale(.75) translateY(10%);
+    transform-origin: 50% 100%;
+}
+
+.modal_close {
+    font-size: .8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--white-color);
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+}
+
+/* show modal */
+.show-modal {
+    visibility: visible;
+    opacity: 1;
+}
+
+.show-modal .modal_content {
+    transform: rotateX(0) scale(1) translateY(0);
+}
+
+@media screen and (min-width: 576px) {
+    .modal_content {
+        max-width: 420px;
+        margin: auto;
+        border-radius: 1.25rem;
+    }
+}
+
+/*======= ALERT ========*/
+.rubizco_alert {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    background: var(--white-color);
+    padding: 1rem;
+    border-top: 3px solid var(--primary-color);
+    border-radius: .75rem;
+    box-shadow: 0 10px 30px rgb(5 5 5 / 15%);
+}
+
+.rubizco_alert_icon {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.rubizco_alert_message {
+    margin-bottom: 0;
 }
 
 /*=============== LOGIN PAGE ==================*/
@@ -348,6 +565,7 @@ input {
     left: 0;
     display: grid;
     align-items: center;
+    z-index: var(--z-fixed);
 }
 
 .rubizco_nav {
@@ -355,6 +573,7 @@ input {
     justify-content: space-between;
     align-items: center;
     column-gap: 0.5rem;
+    transition: .4s;
 }
 
 .nav_toggle {
@@ -436,6 +655,7 @@ input {
     padding: 0.5rem 1.5rem;
     font-size: var(--small-font-size);
     color: var(--text-color);
+    font-weight: var(--font-medium);
 }
 
 .nav_profile_dropdown_list a:hover {
@@ -455,6 +675,7 @@ input {
     left: -280px;
     padding: 2.5rem 0;
     transition: all .25s cubic-bezier(.645,.045,.355,1);
+    z-index: var(--z-fixed);
 }
 
 .nav_list {
@@ -501,6 +722,11 @@ input {
     left: 0;
 }
 
+.scroll-header {
+    background: var(--white-color);
+    box-shadow: 0 10px 30px rgb(5 5 5 / 10%);
+}
+
 @media screen and (max-width: 412px) {
     .nav_right_content .search_form {
         display: none;
@@ -514,7 +740,7 @@ input {
 
     .rubizco_nav {
         justify-content: flex-end;
-        margin: 0 1.5rem 0 0;
+        padding: 0;
     }
 
     .nav_close,
@@ -534,6 +760,20 @@ input {
         height: calc(var(--header-height) + 1.5rem);
     }
 
+    .scroll-header {
+        background: transparent;
+        box-shadow: none;
+        top: 1.25rem;
+    }
+
+    .scroll-header .rubizco_nav {
+        padding: 1.25rem 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgb(5 5 5 / 5%);
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, .6);
+    }
+
     .rubizco_header,
     .rubizco_main {
         padding-left: calc(280px + 3rem);
@@ -544,7 +784,50 @@ input {
     }
 }
 
-/*=============== Dashboard ==================*/
+/*=============== DASHBOARD ==================*/
+.dataTables_length select {
+    border: 0 !important;
+    background: var(--white-color) !important;
+}
+
+/*=============== BATCH PAGE ==================*/
+.batch_content {
+    display: grid;
+    row-gap: .25rem;
+}
+
+.batch_content h4,
+.batch_content p {
+    margin-bottom: 0;
+}
+
+.batch_status {
+    font-weight: var(--font-semi-bold);
+    font-size: var(--small-font-size);
+}
+
+.batch_container {
+    margin-top: 1.25rem;
+}
+
+
+@media screen and (min-width: 768px) {
+    .batch_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .batch_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1780px) {
+    .batch_container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 /*=============== SCROLL BAR ==================*/
 ::-webkit-scrollbar{
