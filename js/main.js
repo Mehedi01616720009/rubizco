@@ -147,5 +147,47 @@ const toggleSelect = (select) => {
     }
 }
 
+/*========= OTP CODE VERIFY =========*/
+const otpInputs = document.querySelectorAll('.otp_field input')
+const otpBtn = document.querySelector('.otp_container form button')
+
+// iterate over all inputs
+otpInputs.forEach((input, index1) => {
+    input.addEventListener("keyup", (e) => {
+        const currentInput = input
+        const nextInput = input.nextElementSibling
+        const prevInput = input.previousElementSibling
+
+        if(currentInput.value.length > 1) {
+            currentInput.value = '';
+            return;
+        }
+
+        if(nextInput && nextInput.hasAttribute('disabled') && currentInput.value != '') {
+            nextInput.removeAttribute('disabled')
+            nextInput.focus()
+        }
+
+        if(e.key === "Backspace") {
+            otpInputs.forEach((input, index2) => {
+                if(index1 <= index2 && prevInput) {
+                    input.setAttribute('disabled', true)
+                    currentInput.value = ''
+                    prevInput.focus()
+                }
+            })
+        }
+
+        if(!otpInputs[3].disabled && otpInputs[3].value !== '') {
+            otpBtn.classList.remove('disabled')
+            return
+        }
+        otpBtn.classList.add('disabled')
+    })
+})
+
+// focus the first input field
+window.addEventListener('load', () => otpInputs[0].focus())
+
 /*========= DATA TABLE =========*/
 // let table = new DataTable('#table_id');

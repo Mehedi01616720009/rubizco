@@ -424,6 +424,11 @@ input {
     color: var(--primary-color);
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: .5;
+}
+
 /*======= FORM META ========*/
 .form_meta {
     display: flex;
@@ -431,29 +436,6 @@ input {
     align-items: center;
     margin-top: 1rem;
     font-weight: var(--font-semi-bold);
-}
-
-/*======= OTP ========*/
-.otp_field {
-    display: flex;
-    align-items: center;
-    transition: all .4s;
-    column-gap: 1rem;
-}
-
-.otp_field input {
-    width: 4rem;
-    line-height: var(--h1-line-height);
-    box-shadow: 0 0 30px 0px rgb(5 5 5 / 11%);
-    padding: 1.25rem 1rem;
-    border-radius: 0.75rem;
-    border: 2px solid var(--primary-color);
-}
-
-@media screen and (min-width: 1024px) {
-    .otp_field input {
-        width: 4.75rem;
-    }
 }
 
 /*======= MODAL ========*/
@@ -558,13 +540,6 @@ input {
     margin-left: auto;
 }
 
-@media screen and (min-width: 576px) {
-    .login_container {
-        max-width: 544px;
-        margin: 0 auto;
-    }
-}
-
 /*=============== REGISTER PAGE ==================*/
 .register_container {
     margin-left: 1rem;
@@ -573,8 +548,70 @@ input {
 }
 
 @media screen and (min-width: 576px) {
+    .login_container, 
     .register_container {
         max-width: 544px;
+        margin: 0 auto;
+    }
+}
+
+/*=============== OTP PAGE ==================*/
+.otp_container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: grid;
+    align-content: center;
+    height: 100vh;
+}
+
+.otp_header {
+    text-align: center;
+}
+
+.otp_icon {
+    font-size: 6rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.otp_header h2 {
+    color: var(--text-color);
+    font-size: var(--h3-font-size);
+}
+
+.otp_field {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    transition: all .4s;
+    column-gap: 1rem;
+}
+
+.otp_field input {
+    width: 100%;
+    line-height: 4.5rem;
+    box-shadow: 0 0 30px 0px rgb(5 5 5 / 11%);
+    padding: 1.25rem 1rem;
+    border-radius: 0.75rem;
+    border: 2px solid var(--primary-color);
+    font-size: var(--h2-font-size);
+    text-align: center !important;
+}
+
+.otp_field input::-webkit-inner-spin-button,
+.otp_field input::-webkit-outer-spin-button {
+    display: none;
+}
+
+@media screen and (max-width: 400px) {
+    .otp_field input {
+        line-height: 3.5rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .otp_container {
+        max-width: 460px;
         margin: 0 auto;
     }
 }
